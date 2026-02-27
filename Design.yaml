@@ -1,0 +1,129 @@
+HTTP SERVER FROM SCRATCH PROJECT (Node.js Core Only)
+
+Goal: Build a minimal HTTP server using only Node.js core modules (no
+Express or frameworks) to deeply understand HTTP fundamentals.
+
+  ------------------------------------------------------------
+  PHASE 1 — Basic HTTP Server Skeleton
+  ------------------------------------------------------------
+  - Use Node’s built-in http module. - Create a server. -
+  Listen on a port. - Log incoming request method, URL, and
+  headers.
+
+  Learning Outcome: Understand raw HTTP requests and how the
+  server receives them.
+  ------------------------------------------------------------
+
+PHASE 2 — Manual Routing
+
+Implement routing manually for:
+
+-   GET /
+-   GET /users
+-   POST /users
+-   PUT /users/:id
+-   DELETE /users/:id
+
+Learning Outcome: Understand method-based routing and URL parsing
+without frameworks.
+
+  ------------------------------------------------------------
+  PHASE 3 — Parsing Request Body
+  ------------------------------------------------------------
+  - Handle JSON request bodies. - Parse incoming data stream
+  manually. - Handle invalid JSON safely.
+
+  Learning Outcome: Understand how HTTP request bodies are
+  streamed and parsed.
+  ------------------------------------------------------------
+
+PHASE 4 — Response Construction
+
+-   Send proper status codes (200, 201, 400, 404).
+-   Set Content-Type headers correctly.
+-   Return JSON and HTML responses.
+
+Learning Outcome: Understand HTTP response structure and status
+handling.
+
+  ------------------------------------------------------------
+  PHASE 5 — Idempotency Awareness
+  ------------------------------------------------------------
+  - Ensure GET does not mutate state. - Implement PUT as full
+  replacement. - Implement POST as creation. - Implement
+  DELETE correctly. - Test behavior with repeated requests.
+
+  Learning Outcome: Understand idempotent vs non-idempotent
+  methods.
+  ------------------------------------------------------------
+
+PHASE 6 — Cookie-Based Sessions
+
+-   Generate session IDs on login.
+-   Store sessions in memory (Map).
+-   Send Set-Cookie header.
+-   Parse Cookie header on requests.
+-   Validate session for protected routes.
+-   Experiment with HttpOnly, Secure, SameSite flags.
+
+Learning Outcome: Understand state management and cookie-based
+authentication.
+
+  ------------------------------------------------------------
+  PHASE 7 — CORS + Preflight
+  ------------------------------------------------------------
+  - Handle OPTIONS requests. - Implement
+  Access-Control-Allow-Origin. - Implement
+  Access-Control-Allow-Methods. - Implement
+  Access-Control-Allow-Headers. - Test from browser using
+  fetch.
+
+  Learning Outcome: Understand browser CORS enforcement and
+  preflight behavior.
+  ------------------------------------------------------------
+
+PHASE 8 — HTTP Caching
+
+-   Implement Cache-Control header.
+-   Generate ETag for resources.
+-   Handle If-None-Match header.
+-   Return 304 Not Modified when appropriate.
+
+Learning Outcome: Understand strong vs conditional caching.
+
+  ------------------------------------------------------------
+  PHASE 9 — HTTP Compression
+  ------------------------------------------------------------
+  - Detect Accept-Encoding header. - Implement gzip
+  compression. - Set Content-Encoding header properly. - Test
+  using curl.
+
+  Learning Outcome: Understand response compression and
+  bandwidth optimization.
+  ------------------------------------------------------------
+
+PHASE 10 — Content Negotiation
+
+-   Use Accept header to return JSON or HTML.
+-   Use Accept-Language for language variation.
+-   Add Vary header where appropriate.
+
+Learning Outcome: Understand multi-representation resources and
+negotiation.
+
+  -------------------
+  FINAL DELIVERABLE
+  -------------------
+
+Your server should:
+
+-   Handle CRUD operations
+-   Manage sessions
+-   Support CORS
+-   Implement caching with ETag
+-   Support gzip compression
+-   Perform content negotiation
+-   Respect HTTP semantics
+
+By completing this project, you will have deep, language-independent
+understanding of how HTTP works in real production systems.
